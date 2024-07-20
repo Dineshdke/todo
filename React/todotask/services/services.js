@@ -3,7 +3,6 @@ import api from "../api";
 export async function getTask() {
   try {
     let res = await api.get("/tasks");
-    console.log(res);
     return res;
   } catch (error) {
     throw new Error(error);

@@ -72,8 +72,7 @@ function TaskList(props) {
   };
 
   function handleChange(e) {
-    setData((prev) => ({ ...editData, [e.target.name]: e.target.value }));
-    console.log(editData)
+    setData((prev) => ({ ...data, [e.target.name]: e.target.value }));
   }
   return (
     <div>

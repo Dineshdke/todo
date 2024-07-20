@@ -64,26 +64,26 @@ function App() {
         >
           <TaskForm task={task} setTask={setTask} setLoading={setLoading} />
         </div>
+        <div className="list">
+          <div style={{ margin: "0.5rem" }}>My toDos List</div>
+          <div className="filter">
+            <select name="filter" id="selectFilter" onChange={handleFilter}>
+              <option value="default" defaultValue="true">
+                Select a Filter
+              </option>
+              <option value="todo">Todo</option>
+              <option value="inprogress">Inprogress</option>
+              <option value="done">Done</option>
+            </select>
+            <button onClick={handleClear} id="clearButton">
+              Clear Filters
+            </button>
+          </div>
+        </div>
         {loading ? (
           <CircularProgress style={{ margin: "1rem" }} />
         ) : (
           <>
-            <div className="list">
-              <div style={{ margin: "0.5rem" }}>My toDos List</div>
-              <div className="filter">
-                <select name="filter" id="selectFilter" onChange={handleFilter}>
-                  <option value="default" defaultValue="true">
-                    Select a Filter
-                  </option>
-                  <option value="todo">Todo</option>
-                  <option value="inprogress">Inprogress</option>
-                  <option value="done">Done</option>
-                </select>
-                <button onClick={handleClear} id="clearButton">
-                  Clear Filters
-                </button>
-              </div>
-            </div>
             {task.length > 0 ? (
               <div>
                 {task.map((item) => {

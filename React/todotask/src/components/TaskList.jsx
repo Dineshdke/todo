@@ -72,7 +72,7 @@ function TaskList(props) {
   };
 
   function handleChange(e) {
-    setData((prev) => ({ ...data, [e.target.name]: e.target.value }));
+    setData({ ...data, [e.target.name]: e.target.value });
   }
   return (
     <div>

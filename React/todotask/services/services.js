@@ -33,7 +33,6 @@ export async function editTask(final) {
 }
 
 export async function addTask(obj) {
-  console.log(obj)
   try {
     const data = async () => {
       await api.post(`/tasks`, obj);

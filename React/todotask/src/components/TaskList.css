@@ -1,0 +1,58 @@
+.table{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.editButton{
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 800;
+    font-size: 1rem;
+    font-style: normal;
+    background-color: rgb(50, 252, 77);
+    height: 2rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1rem;
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+#itemId{
+    width: 5vw;
+    text-align: center;
+    margin:0.2rem;
+}
+
+#itemTitle{
+    width: 20vw;
+    text-align: start;
+    /* margin:0.2rem; */
+}
+
+#itemDescription{
+    width: 40vw;
+    text-align: start;
+    /* margin:0.2rem; */
+}
+#itemStatus{
+    width: 10vw;
+    text-align: start;
+    /* margin:0.2rem; */
+}
+
+#itemButton{
+    display: flex;
+    width: 2rem;
+    text-align: center;
+    margin:0.2rem;
+}
+
+.inputEdit{
+    margin: 1rem 1rem 1rem 1rem;
+    height: 2.5rem;
+    width: 20%;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-style: normal;
+}

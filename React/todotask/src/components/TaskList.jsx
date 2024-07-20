@@ -50,24 +50,34 @@ function TaskList(props) {
 
   const handleSave = async (e) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      let res = await editTask(data);
-      let change = await getTask();
-      setEditing(false);
-      props.setTask((prev) => {
-        return change.data;
-      });
-      const message = "Task Saved";
+    let { status } = data;
+    if (status == "inprogress" || status == "todo" || status == "done") {
+      try {
+        setLoading(true);
+        let res = await editTask(data);
+        let change = await getTask();
+        setEditing(false);
+        props.setTask((prev) => {
+          return change.data;
+        });
+        const message = "Task Saved";
+        enqueueSnackbar(message, {
+          variant: "success",
+          autoHideDuration: 1000,
+          preventDuplicate: true,
+        });
+      } catch (error) {
+        throw new Error(error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      const message = "Please enter the correct status";
       enqueueSnackbar(message, {
-        variant: "success",
-        autoHideDuration: 1000,
+        variant: "warning",
+        autoHideDuration: 2000,
         preventDuplicate: true,
       });
-    } catch (error) {
-      throw new Error(error);
-    } finally {
-      setLoading(false);
     }
   };
 

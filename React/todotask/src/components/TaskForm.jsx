@@ -8,6 +8,12 @@ function TaskForm(props) {
   const [value, setValue] = useState({});
   const { enqueueSnackbar } = useSnackbar();
 
+  let defaultObj = {
+    "title":'',
+    "description":'',
+    "value":'',
+  }
+
   function handleChange(e) {
     let val;
     setValue((prev) => {
@@ -29,7 +35,7 @@ function TaskForm(props) {
         let res = await addTask(value);
         let change = await getTask();
         props.setTask((prev) => change.data);
-        setValue({});
+        setValue({defaultObj});
         const message = "Task added";
         enqueueSnackbar(message, {
           variant: "success",
@@ -40,7 +46,6 @@ function TaskForm(props) {
         throw new Error(error);
       } finally {
         setLoading(false);
-        window.location.reload();
       }
     } else {
       const message = "Please enter the correct status";

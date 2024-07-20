@@ -25,6 +25,9 @@ function App() {
     } catch (error) {
       throw new Error(error);
     }
+    finally{
+      setLoading(false);
+    }
   };
 
   const handleFilter = async (e) => {

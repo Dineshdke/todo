@@ -11,7 +11,7 @@ app=FastAPI()
 
 origins=[
     'http://localhost:5173',
-    'https://todo-frontend-tau-one.vercel.app/',
+    'https://todo-frontend-eight-delta.vercel.app/',
 ]
 
 app.add_middleware(

@@ -7,7 +7,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
   const [task, setTask] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   let heading = {
     id: "Id",

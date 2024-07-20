@@ -11,7 +11,7 @@ function TaskForm(props) {
   let defaultObj = {
     "title":'',
     "description":'',
-    "value":'',
+    "status":'',
   }
 
   function handleChange(e) {
@@ -35,7 +35,7 @@ function TaskForm(props) {
         let res = await addTask(value);
         let change = await getTask();
         props.setTask((prev) => change.data);
-        setValue({defaultObj});
+        setValue(defaultObj);
         const message = "Task added";
         enqueueSnackbar(message, {
           variant: "success",
